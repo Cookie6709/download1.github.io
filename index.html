@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>HCJ3D - HTML, CSS, and JavaScript in 3D</title>
+
+        <meta charset="utf-8">
+        <meta name="description" content="HTML, CSS, and JavaScript in 3D">
+        <meta name="property" content="HTML, CSS, and JavaScript in 3D">
+        <meta property="fb:app_id" content="358318594591390">
+        <meta property="fb:admins" content="4803002">
+
+        <link rel="stylesheet" type="text/css" href="/css/style.css">
+        <link rel="stylesheet" type="text/css" href="/css/hcj3d.css">
+
+        <script src="/js/jquery-3.3.1.min.js"></script>
+        <script src="/js/Model/Entity/Cube.js"></script>
+        <script src="/js/Model/Entity/Ground.js"></script>
+        <script src="/js/Model/Entity/Mannequin.js"></script>
+        <script src="/js/Model/Entity/Point.js"></script>
+        <script src="/js/Model/Service/Ajax.js"></script>
+        <script src="/js/Model/Service/Array.js"></script>
+        <script src="/js/Model/Service/Cube.js"></script>
+        <script src="/js/Model/Service/Cube/Draw.js"></script>
+        <script src="/js/Model/Service/Cubes.js"></script>
+        <script src="/js/Model/Service/Ground/Draw.js"></script>
+        <script src="/js/Model/Service/Mannequin/Draw.js"></script>
+        <script src="/js/Model/Service/Mannequin/Move.js"></script>
+        <script src="/js/Model/Service/Points.js"></script>
+
+        <script src="/js/main.js"></script>
+
+        <?php if (!empty($_SERVER['HTTP_HOST']) && ($_SERVER['HTTP_HOST'] == 'www.hcj3d.com')): ?>
+            <!-- Global site tag (gtag.js) - Google Analytics -->
+            <script async src="https://www.googletagmanager.com/gtag/js?id=UA-42535259-27"></script>
+            <script>
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+
+              gtag('config', 'UA-42535259-27');
+            </script>
+        <?php endif ?>
+    </head>
+    <body>
+        <header>
+            <div class="sun">
+                <div class="ray long" data-id="1"></div>
+                <div class="ray long" data-id="2"></div>
+                <div class="ray long" data-id="3"></div>
+                <div class="ray short" data-id="4"></div>
+                <div class="ray short" data-id="5"></div>
+            </div>
+            <div class="left">
+                <h1>HCJ3D</h1>
+                <span>
+                    HTML, CSS, and<br>
+                    JavaScript in 3D
+                </span>
+            </div>
+            <div class="right">
+                <ol>
+                    <li><img src="/images/coins.png" style="width: 20px;"> 100</li>
+                    <li><img src="/images/heart.png" style="width: 20px;"> 100%</li>
+                </ol>
+            </div>
+        </header>
+
+        <main>
+            <hcj3d-world>
+                <hcj3d-view>
+                    <hcj3d-perspective>
+                        <hcj3d-mannequin id="me">
+                            <hcj3d-mannequin-bubble>
+                                <hcj3d-mannequin-bubble-text></hcj3d-mannequin-bubble-text>
+                                <hcj3d-mannequin-bubble-arrow></hcj3d-mannequin-bubble-arrow>
+                            </hcj3d-mannequin-bubble>
+                            <hcj3d-mannequin-leg class="left">
+                                <hcj3d-mannequin-leg-top></hcj3d-mannequin-leg-top>
+                                <hcj3d-mannequin-leg-left></hcj3d-mannequin-leg-left>
+                                <hcj3d-mannequin-leg-right></hcj3d-mannequin-leg-right>
+                                <hcj3d-mannequin-leg-front></hcj3d-mannequin-leg-front>
+                                <hcj3d-mannequin-leg-back></hcj3d-mannequin-leg-back>
+                            </hcj3d-mannequin-leg>
+                            <hcj3d-mannequin-leg class="right">
+                                <hcj3d-mannequin-leg-top></hcj3d-mannequin-leg-top>
+                                <hcj3d-mannequin-leg-left></hcj3d-mannequin-leg-left>
+                                <hcj3d-mannequin-leg-right></hcj3d-mannequin-leg-right>
+                                <hcj3d-mannequin-leg-front></hcj3d-mannequin-leg-front>
+                                <hcj3d-mannequin-leg-back></hcj3d-mannequin-leg-back>
+                            </hcj3d-mannequin-leg>
+                            <hcj3d-mannequin-body>
+                                <hcj3d-mannequin-body-top></hcj3d-mannequin-body-top>
+                                <hcj3d-mannequin-body-left></hcj3d-mannequin-body-left>
+                                <hcj3d-mannequin-body-right></hcj3d-mannequin-body-right>
+                                <hcj3d-mannequin-body-front></hcj3d-mannequin-body-front>
+                                <hcj3d-mannequin-body-back>
+                                    <div class="display-name"></div>
+                                </hcj3d-mannequin-body-back>
+                            </hcj3d-mannequin-body>
+                            <hcj3d-mannequin-head>
+                                <hcj3d-mannequin-head-top></hcj3d-mannequin-head-top>
+                                <hcj3d-mannequin-head-left></hcj3d-mannequin-head-left>
+                                <hcj3d-mannequin-head-right></hcj3d-mannequin-head-right>
+                                <hcj3d-mannequin-head-front></hcj3d-mannequin-head-front>
+                                <hcj3d-mannequin-head-back></hcj3d-mannequin-head-back>
+                            </hcj3d-mannequin-head>
+                        </hcj3d-mannequin>
+                    </hcj3d-perspective>
+                </hcj3d-view>
+            </hcj3d-world>
+        </main>
+
+        <footer>
+            <div class="bottom-left">
+                <ol>
+                    <li id="w">W</li>
+                    <li id="a">A</li>
+                    <li id="s">S</li>
+                    <li id="d">D</li>
+                    <li id="left">left</li>
+                    <li id="right">right</li>
+                    <li id="up">up</li>
+                    <li id="down">down</li>
+                    <li id="space-bar">space</li>
+                    <li id="return">return</li>
+                </ol>
+            </div>
+            <ol class="panels">
+                <li>
+                    <h5>X</h5>
+                    <span id="x">0</span>
+                </li>
+                <li>
+                    <h5>Y</h5>
+                    <span id="y">0</span>
+                </li>
+                <li>
+                    <h5>Z</h5>
+                    <span id="z">0</span>
+                </li>
+                <li>
+                    <h5>Distance Traveled</h5>
+                    <span id="distance-traveled">0</span>
+                </li>
+            </ol>
+        </footer>
+
+        <div class="dialog body" style="display: none;">
+            <form>
+                <input type="text" name="display-name" placeholder="Name" autocomplete="off">
+                <input type="submit" value="Submit">
+            </form>
+        </div>
+        <div class="dialog text-to-speech" style="display: none;">
+            <form>
+                <input type="text" name="speech" placeholder="Say something..." autocomplete="off">
+                <input type="submit" value="Speak">
+            </form>
+        </div>
+    </body>
+</html>
