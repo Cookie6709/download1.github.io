@@ -1,0 +1,209 @@
+.bc-g {
+    background-color: green;
+}
+.c-r {
+    color: red;
+}
+a {
+    color: #00f;
+}
+body {
+    margin: 0;
+    font-size: 20px;
+    word-wrap: break-word;
+}
+div.dialog {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 10px;
+    padding: 10px;
+    transform: translateX(-50%) translateY(-50%);
+    will-change: transform;
+}
+    div.dialog *:last-child {
+        margin-bottom: 0;
+    }
+    div.dialog.text-to-speech input[type=text] {
+        width: 400px;
+    }
+footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    z-index: 1;
+    will-change: transform;
+}
+    footer > div {
+        background-color: rgba(255, 255, 255, 0.9);
+        display: inline-block;
+        padding: 10px;
+    }
+    footer > div:first-child {
+        border-radius: 0 10px 0 0;
+    }
+    footer > div:last-child {
+        border-radius: 10px 0 0 0;
+        display: flex;
+    }
+    footer div ol {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        font-size: 0;
+    }
+        footer div ol li {
+            display: inline-block;
+            text-align: center;
+            font-weight: bold;
+            font-size: 20px;
+            padding: 5px;
+        }
+    footer ol.panels li {
+        border-radius: 10px 10px 0 0;
+        margin-right: 10px;
+    }
+    footer ol.panels li:last-child {
+        border-radius: 10px 0 0 0;
+        margin: 0;
+    }
+h1 {
+    display: block;
+    margin: 0;
+    padding: 0;
+    font-size: 50px;
+}
+h2 {
+    display: block;
+    margin: 0;
+    padding: 0;
+    font-size: 40px;
+}
+h5 {
+    display: block;
+    margin: 0;
+    padding: 0;
+    font-size: 20px;
+}
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1;
+    will-change: transform;
+}
+    header div.left {
+        position: absolute;
+        top: 0;
+        left: 0;
+        padding: 10px;
+    }
+    header div.sun {
+        position: absolute;
+        top: -200px;
+        left: -200px;
+        border-radius: 50%;
+        width: 400px;
+        height: 400px;
+        background-color: yellow;
+    }
+        header div.sun div.ray.long {
+            position: absolute;
+            width: 20px;
+            height: 200px;
+            background-color: yellow;
+        }
+        header div.sun div.ray.short {
+            position: absolute;
+            width: 20px;
+            height: 100px;
+            background-color: yellow;
+        }
+        header div.sun div.ray[data-id="1"] {
+            transform: translateX(220px) translateY(350px);
+        }
+        header div.sun div.ray[data-id="2"] {
+            transform: translateX(440px) translateY(130px) rotateZ(90deg);
+        }
+        header div.sun div.ray[data-id="3"] {
+            transform: translateX(360px) translateY(270px) rotateZ(-45deg);
+        }
+        header div.sun div.ray[data-id="4"] {
+            transform: translateX(290px) translateY(360px) rotateZ(-22.5deg);
+        }
+        header div.sun div.ray[data-id="5"] {
+            transform: translateX(390px) translateY(250px) rotateZ(-67.5deg);
+        }
+    header div.left span {
+        font-size: 20px;
+    }
+    header div {
+        margin: 0;
+        display: block;
+    }
+    header div.right {
+        position: absolute;
+        top: 0;
+        right: 0;
+    }
+    header div.right ol {
+        font-size: 0;
+    }
+    header div.right ol li {
+        display: inline-block;
+        background-color: rgba(255, 255, 255, 0.9);
+        border-radius: 0 0 10px 10px;
+        padding: 10px;
+        font-size: 20px;
+        margin-left: 10px;
+    }
+    header div.right ol li:last-child {
+        border-radius: 0 0 0 10px;
+    }
+html {
+    font-family: sans-serif;
+}
+input {
+    font-size: 20px;
+    padding: 5px;
+    border: 1px solid #eee;
+    outline: 0;
+}
+    input[type=text] {
+        margin-top: 5px;
+        margin-bottom: 5px;
+    }
+    input[type=submit] {
+        border-radius: 10px;
+    }
+        input[type=submit]:active {
+            background-color: #eee;
+        }
+main {
+    width: 100%;
+    height: 100%;
+    display: block;
+    position: fixed;
+    background: linear-gradient(SkyBlue, White);
+    will-change: transform;
+    transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg) translateX(0px) translateY(0px) translateZ(0px);
+    transform-style: preserve-3d;
+}
+ol {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+ol.panels {
+    font-size: 0;
+}
+ol.panels li {
+    display: inline-block;
+    background-color: #fff;
+    font-size: 20px;
+    padding: 10px;
+}
